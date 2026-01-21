@@ -1,1 +1,1 @@
-# perceptionfrontiers.github.io
+# [Perception Frontiers with Neuromorphic Methods - ICANN 2026](perceptionfrontiers.github.io)
