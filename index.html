@@ -162,7 +162,6 @@
         }
 
         .main {
-            /* background: linear-gradient(135deg, var(--light-blue), white); */
             font-size: 1.1rem;
             line-height: 1.8;
             text-align: justify;
@@ -214,7 +213,7 @@
             border-radius: 8px;
             padding: 25px 20px;
             max-width: 320px;
-            margin: 10px 0 0 0;
+            margin: 10px auto 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
@@ -242,10 +241,11 @@
 
         .date-wrapper {
             display: flex;
-            gap: 20px;          /* space between cards */
-            flex-wrap: wrap;    /* allow break on small screens */
+            gap: 20px;
+            flex-wrap: wrap;
             margin-top: 0px;
             margin-bottom: 20px;
+            justify-content: center;
         }
 
         /* .topic-item:hover::before {
@@ -376,8 +376,8 @@
 
         <section class="section main">
             <h2>Submission</h2>
-            <p><em>Instructions coming soon...</em></p>
-            <p>Accepted papers will be included in the ICANN 2026 proceedings, published in the <a href="https://www.springer.com/gp/computer-science/lncs" style="color: var(--text-dark); text-decoration: underline;">Springer Lecture Notes in Computer Science (LNCS) series</a> (indexed as peer-reviewed publication in the Web of Science).</p>
+            <p>Prepare, anonymize and submit your paper referring to the instructions available on the <a href="https://e-nns.org/icann2026/submission/" style="color: var(--text-dark); text-decoration: underline;">dedicated page</a> of the ICANN 2026 website. In the submission procedure <em>(soon available)</em>, select the “Special Session on Perception Frontiers with Neuromorphic Methods” track.</p>
+            <p>Papers accepted for this Special Session will be included in the ICANN 2026 proceedings, published in the <a href="https://www.springer.com/gp/computer-science/lncs" style="color: var(--text-dark); text-decoration: underline;">Springer Lecture Notes in Computer Science (LNCS) series</a> (indexed as peer-reviewed publication in the Web of Science).</p>
         </section>
 
         <section class="section">
@@ -428,27 +428,6 @@
         </footer>
     </div>
 
-    <!-- <script>
-    function updateCountdown() {
-        const deadline = new Date("2026-03-16T23:59:59-12:00"); // AoE = UTC-12 
-        const now = new Date();
-        const diff = deadline - now;
-
-        if (diff > 0) {
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML =
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-            document.getElementById("countdown").innerHTML = "Deadline passed";
-        }
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-    </script> -->
     <script>
     function updateCountdowns() {
         document.querySelectorAll('.date-card').forEach(card => {
