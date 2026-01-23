@@ -2,7 +2,7 @@
 
 ### Special Session of [ICANN 2026](https://e-nns.org/icann2026/)
 
-### 🌐 [Visit the website](perceptionfrontiers.github.io)
+### 🌐 [Visit the website](https://vitf.github.io/perceptionfrontiers.github.io/)
 
 ---
 
@@ -39,7 +39,7 @@ Theoretical and application-oriented contributions are encouraged, in order to f
 
 ## Important dates
 
-<p align="center">
+<div align="center">
 
 | Deadline | Date (AoE) |
 |----------|------|
@@ -47,7 +47,7 @@ Theoretical and application-oriented contributions are encouraged, in order to f
 | Decision notification | 29 May 2026 |
 | Camera-ready upload | 29 June 2026 |
 
-</p>
+</div>
 
 ICANN 2026 is an in-person conference: at least one co-author of each accepted paper must be physically present in Padua to give the presentation. Make sure you **register by the [corresponding deadline](https://e-nns.org/icann2026/important-dates/)**.
 
