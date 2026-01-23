@@ -214,7 +214,7 @@
             border-radius: 8px;
             padding: 25px 20px;
             max-width: 320px;
-            margin: 20px 0 0 0;
+            margin: 10px 0 0 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
@@ -238,6 +238,14 @@
             color: var(--text-light);
             margin-top: 0px;
             margin-bottom: 4px;
+        }
+
+        .date-wrapper {
+            display: flex;
+            gap: 20px;          /* space between cards */
+            flex-wrap: wrap;    /* allow break on small screens */
+            margin-top: 0px;
+            margin-bottom: 20px;
         }
 
         /* .topic-item:hover::before {
@@ -340,20 +348,30 @@
 
         <section class="section main">
             <h2>Important dates</h2>
-            <div class="date-card">
-                <div class="date-label">
-                    <i class="bi bi-file-earmark-text" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Submission deadline
+            <div class="date-wrapper">
+                <div class="date-card" data-deadline="2026-03-16T23:59:59-12:00">
+                    <div class="date-label">
+                        <i class="bi bi-file-earmark-text" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Submission deadline
+                    </div>
+                    <div class="date-subtext">16 March 2026 (AoE)</div>
+                    <div id="countdown" class="countdown-digits"></div>
                 </div>
-                <div class="date-subtext">16 March 2026 (AoE)</div>
-                <div id="countdown" class="countdown-digits"></div>
+                <div class="date-card" data-deadline="2026-05-29T23:59:59-12:00">
+                    <div class="date-label">
+                        <i class="bi bi-bell" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Decision notification
+                    </div>
+                    <div class="date-subtext">29 May 2026 (AoE)</div>
+                    <div id="countdown" class="countdown-digits"></div>
+                </div>
+                <div class="date-card" data-deadline="2026-06-29T23:59:59-12:00">
+                    <div class="date-label">
+                        <i class="bi bi-check-circle" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Camera-ready upload
+                    </div>
+                    <div class="date-subtext">29 June 2026 (AoE)</div>
+                    <div id="countdown" class="countdown-digits"></div>
+                </div>
             </div>
-            <!-- <div class="date-card">
-                <div class="date-label">
-                    <i class="bi bi-file-earmark-text" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Decision notification
-                </div>
-                <div class="date-subtext">29 May 2026 (AoE)</div>
-                <div id="countdown" class="countdown-digits"></div>
-            </div> -->
+            <p>ICANN 2026 is an in-person conference: at least one co-author of each accepted paper must be physically present in Padua to give the presentation. Make sure you <b>register by the <a href="https://e-nns.org/icann2026/important-dates/" style="color: var(--text-dark); text-decoration: underline;">corresponding deadline</a></b>.</p>
         </section>
 
         <section class="section main">
@@ -410,7 +428,7 @@
         </footer>
     </div>
 
-    <script>
+    <!-- <script>
     function updateCountdown() {
         const deadline = new Date("2026-03-16T23:59:59-12:00"); // AoE = UTC-12 
         const now = new Date();
@@ -430,6 +448,28 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+    </script> -->
+    <script>
+    function updateCountdowns() {
+        document.querySelectorAll('.date-card').forEach(card => {
+            const deadline = new Date(card.dataset.deadline);
+            const display = card.querySelector('.countdown-digits');
+            const now = new Date();
+            const diff = deadline - now;
+
+            if (diff > 0) {
+                const d = Math.floor(diff / 864e5);
+                const h = Math.floor((diff % 864e5) / 36e5);
+                const m = Math.floor((diff % 36e5) / 6e4);
+                const s = Math.floor((diff % 6e4) / 1e3);
+                display.textContent = `${d}d ${h}h ${m}m ${s}s`;
+            } else {
+                display.textContent = 'Expired';
+            }
+        });
+    }
+    setInterval(updateCountdowns, 1000);
+    updateCountdowns();
     </script>
 </body>
 </html>
