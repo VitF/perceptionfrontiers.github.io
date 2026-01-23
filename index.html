@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perception Frontiers with Neuromorphic Methods - ICANN 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
     <style>
         :root {
             --primary-blue: #19214F;
@@ -207,6 +208,38 @@
             transition: left 0.5s ease;
         }
 
+        .date-card {
+            background: var(--light-blue);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 25px 20px;
+            max-width: 320px;
+            margin: 20px 0 0 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .date-label {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .countdown-digits {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
+        }
+
+        .date-subtext {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 0px;
+            margin-bottom: 4px;
+        }
+
         /* .topic-item:hover::before {
             left: 100%;
         } */
@@ -275,7 +308,7 @@
         </header>
 
         <section class="section main">
-            <h2>Abstract</h2>
+            <h2>Call for papers</h2>
             <p>Perception is the interface between sensing and knowledge, part of the process leading from stimulus acquisition to information handling. For animals, the nervous system processes signals from a distributed system of highly specialized peripheral sensors, collected into a single centralized brain.</p>
             
             <p>Consequently, as long as neuromorphic engineering, encompassing neuromorphic computing and Neuro-AI, aims to emulate, or draw inspiration from, the nervous system, a fundamental aspect to be considered is the interplay between peripheral sensing and central processing. Essential for perception, this is also a key aspect of knowledge formation for intelligent systems.<br>
@@ -307,12 +340,26 @@
 
         <section class="section main">
             <h2>Important dates</h2>
-            <p><em>Coming soon...</em></p>
+            <div class="date-card">
+                <div class="date-label">
+                    <i class="bi bi-file-earmark-text" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Submission deadline
+                </div>
+                <div class="date-subtext">16 March 2026 (AoE)</div>
+                <div id="countdown" class="countdown-digits"></div>
+            </div>
+            <!-- <div class="date-card">
+                <div class="date-label">
+                    <i class="bi bi-file-earmark-text" style="margin-right: 6px; vertical-align: -1px; font-size: 24px;"></i>Decision notification
+                </div>
+                <div class="date-subtext">29 May 2026 (AoE)</div>
+                <div id="countdown" class="countdown-digits"></div>
+            </div> -->
         </section>
 
         <section class="section main">
-            <h2>Submission instructions</h2>
-            <p><em>Coming soon...</em></p>
+            <h2>Submission</h2>
+            <p><em>Instructions coming soon...</em></p>
+            <p>Accepted papers will be included in the ICANN 2026 proceedings, published in the <a href="https://www.springer.com/gp/computer-science/lncs" style="color: var(--text-dark); text-decoration: underline;">Springer Lecture Notes in Computer Science (LNCS) series</a> (indexed as peer-reviewed publication in the Web of Science).</p>
         </section>
 
         <section class="section">
@@ -362,5 +409,27 @@
             <img src="./images/logo_icann2026.png" alt="Logo" style="height: 40px; margin-top: 10px;">
         </footer>
     </div>
+
+    <script>
+    function updateCountdown() {
+        const deadline = new Date("2026-03-16T23:59:59-12:00"); // AoE = UTC-12 
+        const now = new Date();
+        const diff = deadline - now;
+
+        if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+            document.getElementById("countdown").innerHTML = "Deadline passed";
+        }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    </script>
 </body>
 </html>
