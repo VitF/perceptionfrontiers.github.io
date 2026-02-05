@@ -27,7 +27,7 @@ Theoretical and application-oriented contributions are encouraged, in order to f
 - Bio-inspired learning algorithms
 - Spatial intelligence
 - Autonomous navigation
-- Reservoir computing
+- Neuromorphic reservoir computing
 - Bio-inspired hardware substrates
 - Hardware-software co-design
 - Cross-platform representation
