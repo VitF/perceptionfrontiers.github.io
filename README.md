@@ -43,7 +43,7 @@ Theoretical and application-oriented contributions are encouraged, in order to f
 
 | Deadline | Date (AoE) |
 |----------|------|
-| Submission deadline | 16 March 2026 |
+| Submission deadline | 30 March 2026 |
 | Decision notification | 29 May 2026 |
 | Camera-ready upload | 29 June 2026 |
 
@@ -55,7 +55,7 @@ ICANN 2026 is an in-person conference: at least one co-author of each accepted p
 
 ## Submission
 
-Prepare, anonymize and submit your paper referring to the instructions available on the [dedicated page](https://e-nns.org/icann2026/submission/) of the ICANN 2026 website. In the submission procedure *(soon available)*, select the "Special Session on Perception Frontiers with Neuromorphic Methods" track.
+Prepare, anonymize and submit your paper referring to the instructions available on the [dedicated page](https://e-nns.org/icann2026/submission/) of the ICANN 2026 website. Select <b><em>“Perception frontiers with neuromorphic methods”</em></b> as <b>Primary Subject Area</b> among the Special Sessions in the CMT submission form accessible from [this link](https://cmt3.research.microsoft.com/ICANN2026).
 
 Papers accepted for this Special Session will be included in the ICANN 2026 proceedings, published in the [Springer Lecture Notes in Computer Science (LNCS) series](https://www.springer.com/gp/computer-science/lncs) (indexed as peer-reviewed publication in the Web of Science).
 
