@@ -45,7 +45,7 @@ Theoretical and application-oriented contributions are encouraged, in order to f
 |----------|------|
 | Submission deadline | 30 March 2026 |
 | Decision notification | 29 May 2026 |
-| Camera-ready upload | 29 June 2026 |
+| Camera-ready upload | 15 June 2026 |
 
 </div>
 
