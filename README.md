@@ -4,6 +4,8 @@
 
 ### 🌐 [Visit the website](https://vitf.github.io/perceptionfrontiers.github.io/)
 
+### [List of accepted papers and program of the Special Session](https://vitf.github.io/perceptionfrontiers.github.io/papers.html)
+
 ---
 
 ## Call for papers
