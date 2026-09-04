@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perception Frontiers with Neuromorphic Methods - ICANN 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-blue: #19214F;
+            --secondary-blue: #21327A;
+            --accent-blue: #2A43A5;
+            --light-blue: #E8EBF5;
+            --dark-blue: #111640;
+            --tech-glow: #2A43A5;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border-highlight: #a0231d;
+            --light-orange: #f0e4dd;
+            --bg-gradient: linear-gradient(135deg, #19214F 0%, #21327A 50%, #2A43A5 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px; /* 90%; */
+            margin: 0 auto;
+            padding: 0px 20px;
+            background: white;
+            border-radius: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            border-left: none;
+            transition: none;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            position: relative;
+            padding-top: 30px;
+            padding-bottom: 0px;
+        }
+
+        .section h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+            display: block;
+            position: relative;
+            padding-bottom: 0px;
+        }
+
+        .main {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .main p {
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .abstract-env {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .abstract {
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            font-weight: 400;
+            text-align: justify;
+            display: flex;
+            align-items: justify;
+            /* justify-content: center; */
+            min-height: 60px;
+            border: none;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+
+            background: var(--primary-blue);
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            transition: all 0.25s ease;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 35px;
+
+            color: var(--primary-blue);
+            text-decoration: none;
+
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            transition: all 0.2s ease;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <section class="section">
+        <h2>Reinstating Linear Spatial Filtering in Early Vision from Fixational Motion Event Streams</h2>
+        <h3>Simin Mohammadzadehharzandi; Fulvio Missoni; Andrea Canessa; Silvio P. Sabatini</h3>
+        <div class="abstract-env">
+            <div class="abstract">
+                Event-based vision combined with spiking neural networks offers a biologically grounded framework for modeling early visual processing in continuous time. However, a key open question is under which conditions asynchronous, polarity-separated event streams can support linear and interpretable representations of spatial structure. In this work, we propose a neuromorphic model of early vision that integrates event-based sensing, fixational eye movements, and spatially organized receptive fields inspired by the retino-cortical pathway. Fixational motion transforms spatial image gradients into temporally modulated event streams, which can be linearly integrated provided that ON and OFF channels are combined into a signed representation and responses are aligned with the direction of motion. Under these conditions, the network implements a reverse-correlation mechanism in which neural activity, weighted by motion, converges to a linear functional reconstruction of the image spatial features determined by the receptive field kernel. Using a population of spiking neurons with Gabor receptive fields, we demonstrate that the resulting responses preserve the spatial frequency and phase of sinusoidal gratings and exhibit orientation and band-pass spatial-frequency tuning consistent with visual cortical simple cells. These results establish a principled link between active event-based sensing and classical linear models of early vision, showing that linear spatial representations can emerge from motion-driven event streams through appropriate polarity integration and spatiotemporal weighting.
+            </div>
+        </div>
+    </section>
+
+    <a href="papers.html"
+        class="back-link">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to the accepted papers
+
+    </a>
+</div>
+</body>

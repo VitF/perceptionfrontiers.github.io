@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perception Frontiers with Neuromorphic Methods - ICANN 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-blue: #19214F;
+            --secondary-blue: #21327A;
+            --accent-blue: #2A43A5;
+            --light-blue: #E8EBF5;
+            --dark-blue: #111640;
+            --tech-glow: #2A43A5;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border-highlight: #a0231d;
+            --light-orange: #f0e4dd;
+            --bg-gradient: linear-gradient(135deg, #19214F 0%, #21327A 50%, #2A43A5 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px; /* 90%; */
+            margin: 0 auto;
+            padding: 0px 20px;
+            background: white;
+            border-radius: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            border-left: none;
+            transition: none;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            position: relative;
+            padding-top: 30px;
+            padding-bottom: 0px;
+        }
+
+        .section h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+            display: block;
+            position: relative;
+            padding-bottom: 0px;
+        }
+
+        .main {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .main p {
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .abstract-env {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .abstract {
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            font-weight: 400;
+            text-align: justify;
+            display: flex;
+            align-items: justify;
+            /* justify-content: center; */
+            min-height: 60px;
+            border: none;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+
+            background: var(--primary-blue);
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            transition: all 0.25s ease;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 35px;
+
+            color: var(--primary-blue);
+            text-decoration: none;
+
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            transition: all 0.2s ease;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <section class="section">
+        <h2>Spectral vs Topological Attention in Event-Based Vision</h2>
+        <h3>Thi Thuy Duong Pham; Quy The Tran; Romaric Mazna; Jean Martinet</h3>
+        <div class="abstract-env">
+            <div class="abstract">
+                While attention has been extensively studied in the RGB domain, it has not been extensively studied in the event domain. Classical saliency models such as Spectral Residual (SR) and Boolean Map Saliency (BMS) capture two complementary principles of human attention – spectral innovation and topological figure-ground segregation – but were designed for static RGB frames and break down under motion blur and data redundancy. This paper investigates their adaptation to event-based data from Dynamic Vision Sensors (DVS): neuromorphic cameras that asynchronously record brightness changes with microsecond resolution and inherent immunity to motion blur. We ask whether these lightweight, training-free models can survive translation to the sparse, asynchronous event domain without resorting to data-hungry deep architectures. Three adaptation strategies are evaluated on the N-UCF dataset. CS+HF+SR achieves the best AUC (0.8176), NSS (1.8214), and CC (0.3654); Attn+SR achieves the best AUC across all windows (0.8181) at ∆t = 0.2 s. Both SR-based pipelines peak at ∆t = 0.2 s; longer windows degrade performance through ghosting artefacts.
+            </div>
+        </div>
+    </section>
+
+    <a href="papers.html"
+        class="back-link">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to the accepted papers
+
+    </a>
+</div>
+</body>
