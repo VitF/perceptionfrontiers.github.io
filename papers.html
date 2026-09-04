@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Papers - Perception Frontiers with Neuromorphic Methods - ICANN 2026</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+           ========================================================= */
+
+        :root {
+            --primary-blue: #19214F;
+            --secondary-blue: #21327A;
+            --accent-blue: #2A43A5;
+            --light-blue: #E8EBF5;
+            --dark-blue: #111640;
+
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+
+            --border-highlight: #a0231d;
+            --light-orange: #f0e4dd;
+
+            --news-red: #ff1744;
+            --news-purple: #7c4dff;
+
+            --bg-gradient:
+                linear-gradient(
+                    135deg,
+                    #19214F 0%,
+                    #21327A 50%,
+                    #2A43A5 100%
+                );
+        }
+
+
+        /* =========================================================
+           GENERAL
+           ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .header {
+            text-align: center;
+            padding: 30px 10px;
+            background: url('./images/header.png') center/cover no-repeat;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+
+        /* =========================================================
+           BACK TO HOME
+           ========================================================= */
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 35px;
+
+            color: var(--primary-blue);
+            text-decoration: none;
+
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-blue);
+            transform: translateX(-3px);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+           ========================================================= */
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 60px;
+            height: 3px;
+
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        .section h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+
+        .section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================================
+           STANDARD LISTS
+           ========================================================= */
+
+        .content-list {
+            margin: 15px 0 20px 25px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .content-list li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        .content-list li::marker {
+            color: var(--accent-blue);
+        }
+
+        .numbered-list {
+            margin: 15px 0 20px 25px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .numbered-list li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+
+        /* =========================================================
+           NON-CLICKABLE INFORMATION BOX
+           ========================================================= */
+
+        .info-box {
+            background: var(--light-blue);
+
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+
+            padding: 20px 22px;
+            margin: 20px 0;
+        }
+
+        .save-the-date {
+            background: #4c854c /* var(--light-blue) */;
+            border-radius: 8px;
+            padding: 15px 0px;
+            margin: 0 0;
+        }
+
+        .save-the-date-details {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+
+        .save-the-date-link {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .info-box-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            color: var(--primary-blue);
+            font-size: 1.05rem;
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+        }
+
+
+        /* =========================================================
+           IMPORTANT / HIGHLIGHT BOX
+           ========================================================= */
+
+        .highlight-box {
+            background: var(--primary-blue);
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 0px;
+            margin: 0 0;
+            box-shadow:
+                0 6px 18px rgba(124, 77, 255, 0.25);
+            max-width: 320px;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin: 0 0 0px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.7rem;
+            font-weight: 300;
+        }
+
+
+        /* =========================================================
+           CARDS
+           ========================================================= */
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .clickable-card {
+            display: block;
+
+            background: var(--light-blue);
+
+            border-radius: 10px;
+            padding: 22px;
+
+            color: var(--text-dark);
+            text-decoration: none;
+
+            border-left: 4px solid var(--accent-blue);
+
+            transition: all 0.3s ease;
+        }
+
+        .clickable-card:hover {
+            background: white;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 7px 20px rgba(0, 102, 204, 0.18);
+
+            color: var(--text-dark);
+        }
+
+        .clickable-card .card-icon {
+            font-size: 1.7rem;
+            color: var(--accent-blue);
+
+            margin-bottom: 10px;
+        }
+
+        .clickable-card .card-title {
+            color: var(--primary-blue);
+
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .clickable-card .card-description {
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+            font-weight: 300;
+
+            margin-bottom: 10px;
+        }
+
+        .clickable-card .card-link {
+            color: var(--text-dark);
+
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .abstract-link {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+
+        .static-card {
+            display: block;
+
+            background: var(--light-blue);
+
+            border-radius: 10px;
+            padding: 22px;
+
+            color: var(--text-dark);
+            text-decoration: none;
+
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .static-card .card-icon {
+            font-size: 1.7rem;
+            color: var(--accent-blue);
+
+            margin-bottom: 10px;
+        }
+
+        .static-card .card-title {
+            color: var(--primary-blue);
+
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .static-card .card-description {
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+            font-weight: 300;
+
+            margin-bottom: 10px;
+        }
+
+        .static-card .card-link {
+            color: var(--text-dark);
+
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+
+        /* =========================================================
+           PAPER / ITEM BOXES
+           ========================================================= */
+
+        .paper-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .paper-item {
+            background: var(--light-blue);
+
+            border-radius: 8px;
+
+            padding: 18px 20px;
+
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .paper-item-time {
+            color: var(--primary-blue);
+
+            font-size: 1.05rem;
+            font-weight: 500;
+
+            margin-bottom: 5px;
+        }
+
+        .paper-item-title {
+            color: var(--primary-blue);
+
+            font-size: 1.05rem;
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .paper-item-meta {
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+
+        /* =========================================================
+           CLICKABLE PAPER BOX
+           ========================================================= */
+
+        a.paper-item {
+            display: block;
+
+            color: inherit;
+            text-decoration: none;
+
+            transition: all 0.25s ease;
+        }
+
+        a.paper-item:hover {
+            background: white;
+
+            transform: translateX(5px);
+
+            box-shadow:
+                0 5px 15px rgba(0, 102, 204, 0.15);
+        }
+
+
+        /* =========================================================
+           BUTTONS
+           ========================================================= */
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+
+            background: var(--primary-blue);
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            transition: all 0.25s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-blue);
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+        .button.secondary {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .button.secondary:hover {
+            background: #d9def0;
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 15px 10px;
+            margin-top: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--dark-blue),
+                    var(--secondary-blue)
+                );
+
+            color: white;
+
+            border-radius: 15px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer img {
+            height: 40px;
+            margin-top: 10px;
+        }
+
+
+        /* =========================================================
+           ADJUSTABLE WINDOW
+           ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 45px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section h2 {
+                font-size: 1.25rem;
+            }
+
+            .section p,
+            .content-list,
+            .numbered-list {
+                font-size: 0.98rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-row {
+                flex-direction: column;
+            }
+
+            .button {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
+
+    <header class="header">
+
+        <h1>
+            Accepted papers and schedule of oral presentations
+        </h1>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         NAVIGATION BUTTONS
+         ========================================================= -->
+
+    <section class="section">
+        
+        <!-- <h2>
+            [More information]
+        </h2>
+
+        <p>
+            [Inserire qui il testo che precede i pulsanti.]
+        </p> -->
+
+
+        <div class="button-row">
+
+            <a href="index.html"
+               class="button secondary">
+
+                <i class="bi bi-house"></i>
+
+                Back to the main page
+
+            </a>
+
+            <a href="https://e-nns.org/icann2026/program/"
+               class="button"
+               target="_blank"
+               rel="noopener">
+
+                <i class="bi bi-box-arrow-up-right"></i>
+
+                Full conference program
+
+            </a>
+
+            <a href="https://e-nns.org/icann2026/wp-content/uploads/sites/14/2026/09/Program_pdf.pdf"
+               class="button"
+               target="_blank"
+               rel="noopener">
+
+                <i class="bi bi-file-earmark-pdf"></i>
+
+                Download the full program as PDF
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SAVE THE DATE
+         ========================================================= -->
+
+    <section class="section">
+
+        <!-- <h2>
+            [Information]
+        </h2> -->
+
+        <div class="save-the-date">
+
+            <div class="save-the-date-details" style="display: flex; justify-content: space-around; width: 100%;">
+
+                <div> <i class="bi bi-calendar-check"></i>
+                    &nbsp; 15 September 2026 </div>
+
+                <div> <i class="bi bi-clock-history"></i>
+                    &nbsp; 11:00 - 12:40 </div>
+
+                <div> <i class="bi bi-geo-alt"></i>
+                    &nbsp; Congress Centre B </div>
+
+                <div><i class="bi bi-map"></i>
+                    &nbsp; 
+                    <a href="https://maps.app.goo.gl/YX2Qe4cQBbpxpDcd7" class="save-the-date-link">
+                        Google Maps link
+                    </a> </div>
+
+            </div>
+
+            <!-- <p>
+                [Testo dell'informazione.]
+            </p> -->
+
+        </div>
+
+    </section>
+
+    
+    <!-- =========================================================
+         ACCEPTED PAPERS WITH ABSTRACT
+         ========================================================= -->
+
+    <section class="section">
+
+        <h2>
+            Accepted papers
+        </h2>
+
+
+        <div class="cards-grid">
+            
+            <!-- Template for paper:
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    [Title]
+                </div>
+
+                <div class="card-description">
+                    [Authors]
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_513.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div> -->
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    Sample-Wise Online Sensor Drift Compensation via Self-Organized Spiking Dynamics and Reservoir Computing
+                </div>
+
+                <div class="card-description">
+                    Zhengchen Dong
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_513.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    Reinstating Linear Spatial Filtering in Early Vision from Fixational Motion Event Streams
+                </div>
+
+                <div class="card-description">
+                    Simin Mohammadzadehharzandi; Fulvio Missoni; Andrea Canessa; Silvio P. Sabatini
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_515.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    Spectral vs Topological Attention in Event-Based Vision
+                </div>
+
+                <div class="card-description">
+                    Thi Thuy Duong Pham; Quy The Tran; Romaric Mazna; Jean Martinet
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_641.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    Continuous Reward-Driven Learning in Spiking Neural Networks for Embedded Event-Based Robot Control
+                </div>
+
+                <div class="card-description">
+                    Nicola Russo; Konstantin Nikolic
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_745.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    GERD: Geometric event response data generation
+                </div>
+
+                <div class="card-description">
+                    Jens Egholm Pedersen; Dimitrios Korakovounis; Jörg Conradt
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_827.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    Exploring stimulus-response dynamics in neuromorphic and classical hardware: How inference timing affects results
+                </div>
+
+                <div class="card-description">
+                    Nicola Cassetta; Benedetto Leto; Enrico Macii; Vittorio Fra; Gianvito Urgese
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_841.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="static-card">
+
+                <div class="card-title">
+                    CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras
+                </div>
+
+                <div class="card-description">
+                    Elvin Hajizada; Michael Neumeier; Edward Paxon Frady; Yulia Sandamirskaya; Axel von Arnim; Bing Li; Eyke Hüllermeier
+                </div>
+
+                <div class="card-link">
+                    <a href="abstract_860.html" class="abstract-link">
+                        View abstract
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SCHEDULE OF PRESENTATIONS
+         ========================================================= -->
+
+    <section class="section">
+
+        <h2>
+            Schedule of oral presentations
+        </h2>
+
+        <div class="paper-list">
+
+
+            <div class="paper-item">
+
+                <div class="paper-item-time">
+                    <div> <i class="bi bi-clock"></i>
+                    &nbsp; 11:00 </div>
+                </div>
+
+                <div class="paper-item-title">
+                    Spectral vs Topological Attention in Event-Based Vision
+                </div>
+
+                <!-- <div class="paper-item-meta">
+                    [Additional information]
+                </div> -->
+
+            </div>
+
+
+            <div class="paper-item">
+
+                <div class="paper-item-time">
+                    <div> <i class="bi bi-clock"></i>
+                    &nbsp; 11:20 </div>
+                </div>
+
+                <div class="paper-item-title">
+                    CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras
+                </div>
+
+                <!-- <div class="paper-item-meta">
+                    [Additional information]
+                </div> -->
+
+            </div>
+
+
+            <div class="paper-item">
+
+                <div class="paper-item-time">
+                    <div> <i class="bi bi-clock"></i>
+                    &nbsp; 11:40 </div>
+                </div>
+
+                <div class="paper-item-title">
+                    Reinstating Linear Spatial Filtering in Early Vision from Fixational Motion Event Streams
+                </div>
+
+                <!-- <div class="paper-item-meta">
+                    [Additional information]
+                </div> -->
+
+            </div>
+
+
+            <div class="paper-item">
+
+                <div class="paper-item-time">
+                    <div> <i class="bi bi-clock"></i>
+                    &nbsp; 12:00 </div>
+                </div>
+
+                <div class="paper-item-title">
+                    Continuous Reward-Driven Learning in Spiking Neural Networks for Embedded EventBased Robot Control
+                </div>
+
+                <!-- <div class="paper-item-meta">
+                    [Additional information]
+                </div> -->
+
+            </div>
+
+
+            <div class="paper-item">
+
+                <div class="paper-item-time">
+                    <div> <i class="bi bi-clock"></i>
+                    &nbsp; 12:20 </div>
+                </div>
+
+                <div class="paper-item-title">
+                    GERD: Geometric event response data generation
+                </div>
+
+                <!-- <div class="paper-item-meta">
+                    [Additional information]
+                </div> -->
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <p>
+            ICANN 2026, Special Session -
+            Perception Frontiers with Neuromorphic Methods
+        </p>
+
+        <img
+            src="./images/logo_icann2026.png"
+            alt="ICANN 2026 Logo"
+        >
+
+    </footer>
+
+
+</div>
+
+</body>
+</html>
